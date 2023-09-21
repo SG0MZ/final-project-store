@@ -10,7 +10,11 @@ import com.project.store.repository.UserRepository;
 @Service
 public class UserService {
 
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
+	
+	public UserService(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 	
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
@@ -20,4 +24,13 @@ public class UserService {
 		return userRepository.findById(id)
 				.orElseThrow(() -> new IllegalStateException(String.format("Product with id %s doesn't exist", id)));
 	}
+	
+	public User saveUser(User user) {
+		return userRepository.save(user);
+	}
+	
+	public void deleteUserById(Long id) {
+		userRepository.deleteById(id);
+	}
+	
 }

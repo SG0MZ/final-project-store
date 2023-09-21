@@ -10,13 +10,17 @@ import com.project.store.repository.DomainRepository;
 @Service
 public class DomainService {
 
-	private DomainRepository domainRepository;
+	private final DomainRepository domainRepository;
 	
-	public List<Domain> getAllCourses() {
+	public DomainService(DomainRepository domainRepository) {
+		this.domainRepository = domainRepository;
+	}
+	
+	public List<Domain> getAllDomains() {
 		return domainRepository.findAll();
 	}
 	
-	public Domain getCourseById(Long id) {
+	public Domain getDomainById(Long id) {
 		return domainRepository.findById(id)
 				.orElseThrow(() -> new IllegalStateException(String.format("Domain with id %s doesn't exist", id)));
 	}
