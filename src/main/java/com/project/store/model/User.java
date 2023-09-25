@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,21 +27,27 @@ public class User {
 	
 	private String password;
 	
-	private Set<Authorities> authorities = new HashSet<Authorities>();
+//	@OneToMany(
+//			targetEntity = Authorities.class,
+//			fetch=FetchType.LAZY, 
+//			cascade=CascadeType.ALL, 
+//			mappedBy="user")
+//	@JoinColumn(name="authority_id")
+//	private Set<Authorities> authorities = new HashSet<Authorities>();
 	
 	@Column(nullable = false)
 	private String domainExpertise;
 	
 	private String about;
 
-	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="users")
-	public Set<Authorities> getAuthorities() {
-		return authorities;
-	}
-
-	public void setAuthorities(Set<Authorities> authorities) {
-		this.authorities = authorities;
-	}
+	
+//	public Set<Authorities> getAuthorities() {
+//		return authorities;
+//	}
+//
+//	public void setAuthorities(Set<Authorities> authorities) {
+//		this.authorities = authorities;
+//	}
 
 	public Long getId() {
 		return id;

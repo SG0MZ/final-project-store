@@ -15,15 +15,21 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UserRepository userRepo;
-	
+
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException{
-		User user = userRepo.findByUsername(userName);
-		
-		if(user == null)
-			throw new UsernameNotFoundException("Username and/or password was incorrect.");
-		
-		return new CustomSecurityUser(user);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
+//	@Override
+//	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException{
+//		User user = userRepo.findByUsername(userName);
+//		
+//		if(user == null)
+//			throw new UsernameNotFoundException("Username and/or password was incorrect.");
+//		
+//		return new CustomSecurityUser(user);
+//	}
 	
 }

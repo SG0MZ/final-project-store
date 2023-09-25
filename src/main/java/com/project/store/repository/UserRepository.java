@@ -12,12 +12,13 @@ import com.project.store.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+//	@Query("select u from User u")
 	List<User> findAll();
-	
+	 
 	Optional<User> findById(Long userId);
 
-	@Query("select u from User u"
-		      + " left join fetch u.authorities"
-		      + " where u.login = :username")
-	User findByUsername(String login);
+//	@Query("select u from User u"
+//		      + " left join fetch u.authorities"
+//		      + " where u.login = ?1")
+//	User findByUsername(String login);
 }
