@@ -9,6 +9,13 @@ import com.project.store.model.Domain;
 
 public interface DomainRepository extends JpaRepository<Domain, Long> {
 	
+	/*
+	 * The functions I used to reach the information I would use are
+	 * 
+	 * findAll
+	 * findById
+	 */
+	
 	List<Domain> findAll();
 	
 	Optional<Domain> findById(Long courseId);

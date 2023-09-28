@@ -9,6 +9,15 @@ import com.project.store.model.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
+	/*
+	 * The functions I used to reach the information I would use are
+	 * 
+	 * saveAll
+	 * findAll
+	 * findById
+	 * findByFirstNameAndLastName
+	 */
+	
 	<S extends Order> List<S> saveAll(Iterable<S> orders);
 	
 	List<Order> findAll();

@@ -7,24 +7,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
-//@Table(name = "courses")
+@Table(name = "courses")
 public class Course {
+	
+	/*
+	 * The following entity is for courses
+	 * 
+	 * Id
+	 * Domain Name
+	 */
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Schema(name = "Course Id", example = "1")
     private Long id;
 	
 	@Column(nullable = false, unique = true)
+	@Schema(name = "Course Name", example = "Guitar Advanced", required = true)
 	private String courseName;
 	
 	@Column(nullable = false)
+	@Schema(name = "Course Domain", example = "Music", required = true)
 	private String domain;
 	
 	@Column(nullable = false)
+	@Schema(name = "Course Description", example = "For experienced people", required = true)
 	private String description;
 	
 	@Column(nullable = false)
+	@Schema(name = "Course Price", example = "100.0", required = true)
 	private Double price;
 
 	public Long getId() {

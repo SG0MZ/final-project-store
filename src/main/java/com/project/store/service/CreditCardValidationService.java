@@ -10,6 +10,16 @@ import java.util.stream.Collectors;
 
 @Service
 public class CreditCardValidationService {
+	
+	/*
+	 * The following functions were created to validate a credit card which must be numbers 0 to 9 with 16 digits.
+	 * Also it has to be different to the stolen credit cards saved in the list below. Otherwise it will throw an exception.
+	 * 
+	 * validate
+	 * validateNumberOfDigits
+	 * validateNotStolenCreditCard
+	 */
+	
     private static final String CREDIT_CARD_FORMAT = "^[0-9]{16}$";
     private static final Set<String> STOLEN_CREDIT_CARDS = new HashSet<>();
 

@@ -10,6 +10,13 @@ import com.project.store.repository.DomainRepository;
 @Service
 public class DomainService {
 
+	/*
+	 * I created this service to use the Domain Repository
+	 * 
+	 * getAllDomains
+	 * getDomainById (I throw an Exception message in case the given id doesnt exist)
+	 */
+	
 	private final DomainRepository domainRepository;
 	
 	public DomainService(DomainRepository domainRepository) {

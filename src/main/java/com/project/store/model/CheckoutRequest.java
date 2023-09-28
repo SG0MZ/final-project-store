@@ -2,13 +2,39 @@ package com.project.store.model;
 
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class CheckoutRequest {
 
+	/*
+	 * The following class is to help us build a new record of the Order entity
+	 * 
+	 * First Name
+	 * Last Name
+	 * Email
+	 * Shipping Address
+	 * Credit Card
+	 * CourseInfo (SubClass):
+	 * 		Course Id
+	 * 		Quantity
+	 */
+	
+	@Schema(name = "Order First Name", example = "Saul")
 	private String firstName;
+	
+	@Schema(name = "Order Last Name", example = "Gomez")
     private String lastName;
+	
+	@Schema(name = "Order Email", example = "sa@email.com")
     private String email;
+	
+	@Schema(name = "Order Shipping Address", example = "123 Address")
     private String shippingAddress;
+	
+	@Schema(name = "Order Course")
     private List<CourseInfo> course;
+	
+	@Schema(name = "Order Credit Card", example = "7777666655554444")
     private String creditCard;
     
     public List<CourseInfo> getCourse() {
@@ -72,7 +98,10 @@ public class CheckoutRequest {
  
     public static class CourseInfo {
         
+    	@Schema(name = "Course Id", example = "1")
     	private long courseId;
+    	
+    	@Schema(name = "Course Quantity", example = "1")
         private long quantity;
 		
 		public long getCourseId() {

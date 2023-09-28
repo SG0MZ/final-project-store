@@ -10,6 +10,16 @@ import com.project.store.repository.UserRepository;
 @Service
 public class UserService {
 
+	/*
+	 * I created this service to use the User Repository
+	 * 
+	 * getAllUsers
+	 * getUserById (I throw an Exception message in case the given id doesnt exist)
+	 * getUserByUsername
+	 * saveUser
+	 * deleteUserById
+	 */
+	
 	private final UserRepository userRepository;
 	
 	public UserService(UserRepository userRepository) {
@@ -23,6 +33,10 @@ public class UserService {
 	public User getUserById(Long id) {
 		return userRepository.findById(id)
 				.orElseThrow(() -> new IllegalStateException(String.format("Product with id %s doesn't exist", id)));
+	}
+	
+	public List<User> getUserByUsername(String login) {
+		return userRepository.findByLoginContains(login);
 	}
 	
 	public User saveUser(User user) {

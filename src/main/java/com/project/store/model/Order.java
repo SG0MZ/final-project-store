@@ -9,33 +9,56 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "orders")
 public class Order {
 	
+	/*
+	 * The following entity is for orders
+	 * 
+	 * Id
+	 * First Name
+	 * Last Name
+	 * Email
+	 * Shipping Address
+	 * Quantity
+	 * Credit Card
+	 * Course (Entity object)
+	 */
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Schema(name = "Order Id", example = "1")
     private Long id;
 
 	@Column(nullable = false)
+	@Schema(name = "Order First Name", example = "Saul")
     private String firstName;
 	
 	@Column(nullable = false)
+	@Schema(name = "Order Last Name", example = "Gomez")
     private String lastName;
 	
 	@Column(nullable = false)
+	@Schema(name = "Order Email", example = "sa@email.com")
     private String email;
 	
 	@Column(nullable = false)
+	@Schema(name = "Order Shipping Address", example = "123 Address")
     private String shippingAddress;
 	
 	@Column(nullable = false)
+	@Schema(name = "Order Quantity", example = "1")
     private Long quantity;
 	
+	@Schema(name = "Order Credit Card", example = "7777666655554444")
     private String creditCard;
     
     @ManyToOne
     @JoinColumn(name = "fk_course", nullable=false)
+    @Schema(name = "Order Course")
     private Course course;
 
 	public Long getId() {

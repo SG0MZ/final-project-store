@@ -75,15 +75,15 @@ https://templatemo.com/tm-571-hexashop
                   <li><a href="products.html">Courses</a></li>
                   <li><a href="users.html">Users</a></li>
                   <li><a href="orders.html">Orders</a></li>
-                  <li><a href="single-product.html">Single
-                      Course</a></li>
+                  <li><a href="#">Single Course</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                 </ul></li>
               <li class="scroll-to-section"><a href="index.html">Explore</a></li>
               <li>
                 <button
                   onclick="document.getElementById('id01').style.display='block'"
-                  style="width: auto;">Sign Up</button>
+                  style="width: auto; border: none; color: white; background-color: #008CBA; border-radius: 12px; padding: 12px 28px;">Sign
+                  Up</button>
 
                 <div id="id01" class="modal">
                   <span
@@ -95,42 +95,74 @@ https://templatemo.com/tm-571-hexashop
                       <p>Please fill in this form to create an
                         account.</p>
                       <hr>
-                      <label for="email"><b>Email</b></label> <input
-                        type="text" placeholder="Enter Email"
-                        name="email" required> <label for="psw"><b>Password</b></label>
-                      <input type="password"
-                        placeholder="Enter Password" name="psw" required>
+                      <div class="col-lg-6">
+                        <div class="row">
+                          <fieldset>
+                            <label for="email"><b>Username:
+                            </b></label> <input type="text"
+                              placeholder="Enter Username" name="email"
+                              required>
+                          </fieldset>
+                        </div>
+                        <div class="row">
+                          <fieldset>
+                            <br> <label for="email"><b>Domain
+                                Expertise: </b></label> <input type="text"
+                              placeholder="Enter Domain Expertise"
+                              name="email" required>
+                          </fieldset>
+                        </div>
+                        <div class="row">
+                          <fieldset>
+                            <br> <label for="email"><b>About
+                                Me: </b></label> <input type="text"
+                              placeholder="Enter About Me" name="email"
+                              required>
+                          </fieldset>
+                        </div>
+                        <div class="row">
+                          <fieldset>
+                            <br> <label for="psw"><b>Password:
+                            </b></label> <input type="password"
+                              placeholder="Enter Password" name="psw"
+                              required>
+                          </fieldset>
+                          <div class="row">
+                            <fieldset>
+                              <br> <label for="psw-repeat"><b>Repeat
+                                  Password: </b></label> <input type="password"
+                                placeholder="Repeat Password"
+                                name="psw-repeat" required> <label>
+                                <input type="checkbox" checked="checked"
+                                name="remember"
+                                style="margin-bottom: 15px">
+                                Remember me
+                              </label>
+                            </fieldset>
+                          </div>
+                        </div>
+                        <hr>
+                        <p>
+                          By creating an account you agree to our <a
+                            href="#" style="color: dodgerblue">Terms
+                            & Privacy</a>.
+                        </p>
 
-                      <label for="psw-repeat"><b>Repeat
-                          Password</b></label> <input type="password"
-                        placeholder="Repeat Password" name="psw-repeat"
-                        required> <label> <input
-                        type="checkbox" checked="checked"
-                        name="remember" style="margin-bottom: 15px">
-                        Remember me
-                      </label>
-
-                      <p>
-                        By creating an account you agree to our <a
-                          href="#" style="color: dodgerblue">Terms &
-                          Privacy</a>.
-                      </p>
-
-                      <div class="clearfix">
-                        <button type="button"
-                          onclick="document.getElementById('id01').style.display='none'"
-                          class="cancelbtn">Cancel</button>
-                        <button type="submit" class="signupbtn">Sign
-                          Up</button>
+                        <div class="clearfix">
+                          <button type="button"
+                            onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancel</button>
+                          <button type="submit" class="signupbtn">Sign
+                            Up</button>
+                        </div>
                       </div>
-                    </div>
                   </form>
                 </div>
               </li>
               <li>
                 <button
                   onclick="document.getElementById('id02').style.display='block'"
-                  style="width: auto;">Login</button>
+                  style="width: auto; border: none; color: white; background-color: #f44336; border-radius: 12px; padding: 12px 28px;">Login</button>
 
                 <div id="id02" class="modal">
 
@@ -167,6 +199,18 @@ https://templatemo.com/tm-571-hexashop
                     </div>
                   </form>
                 </div>
+              </li>
+              <li><label class="text-light"
+                id="number-of-products-in-cart">0</label> <svg
+                  xmlns="http://www.w3.org/2000/svg" width="30"
+                  height="30" fill="currentColor"
+                  class="bi bi-cart shopping-icon" viewBox="0 0 16 16">
+                    <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button id="checkout-button"
+                  class="btn btn-success btn-sm opacity-100"
+                  style="width: auto; border: none; color: white; background-color: #4CAF50; border-radius: 12px; padding: 12px 28px;">Checkout</button>
               </li>
             </ul>
             <a class='menu-trigger'> <span>Menu</span>
@@ -290,23 +334,21 @@ https://templatemo.com/tm-571-hexashop
           <div class="row">
             <div class="col-6">
               <ul>
-                <li>Store Location:<br>
-                <span>Sunny Isles Beach, FL 33160, United States</span></li>
-                <li>Phone:<br>
-                <span>010-020-0340</span></li>
-                <li>Office Location:<br>
-                <span>North Miami Beach</span></li>
+                <li>Store Location:<br> <span>Sunny
+                    Isles Beach, FL 33160, United States</span></li>
+                <li>Phone:<br> <span>010-020-0340</span></li>
+                <li>Office Location:<br> <span>North
+                    Miami Beach</span></li>
               </ul>
             </div>
             <div class="col-6">
               <ul>
-                <li>Work Hours:<br>
-                <span>07:30 AM - 9:30 PM Daily</span></li>
-                <li>Email:<br>
-                <span>info@company.com</span></li>
-                <li>Social Media:<br>
-                <span><a href="#">Facebook</a>, <a href="#">Instagram</a>,
-                    <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                <li>Work Hours:<br> <span>07:30 AM -
+                    9:30 PM Daily</span></li>
+                <li>Email:<br> <span>info@company.com</span></li>
+                <li>Social Media:<br> <span><a href="#">Facebook</a>,
+                    <a href="#">Instagram</a>, <a href="#">Behance</a>,
+                    <a href="#">Linkedin</a></span></li>
               </ul>
             </div>
           </div>
@@ -345,10 +387,8 @@ https://templatemo.com/tm-571-hexashop
         <div class="col-lg-3">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Homepage</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-lg-12">

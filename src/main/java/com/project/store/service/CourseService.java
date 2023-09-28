@@ -10,6 +10,17 @@ import com.project.store.repository.CourseRepository;
 @Service
 public class CourseService {
 
+	/*
+	 * I created this service to use the Course Repository
+	 * 
+	 * getAllCourses
+	 * getCourseById (I throw an Exception message in case the given id doesnt exist)
+	 * getCourseByDomain
+	 * getCourseByCourseName
+	 * saveCourse
+	 * deleteCourse
+	 */
+	
 	private final CourseRepository courseRepository;
 	
 	public CourseService(CourseRepository courseRepository) {
@@ -27,6 +38,10 @@ public class CourseService {
 	
 	public List<Course> getCourseByDomain(String domain) {
 		return courseRepository.findByDomain(domain);
+	}
+	
+	public List<Course> getCourseByCourseName(String courseName) {
+		return courseRepository.findByCourseNameContains(courseName);
 	}
 	
 	public Course saveCourse(Course course) {
